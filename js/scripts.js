@@ -71,7 +71,7 @@ function outputInfo(deliveryInfo) {
 
 function listPizza(pizzaOrders) {
   for (var index = 0; index < pizzaOrders.length; index++) {
-    $("#pizza-list").append("")
+    $("#pizza-list").append("<li>" + pizzaOrders[index].pizzaSize + ", " + pizzaOrders[index].pizzaDough + ", " + pizzaOrders[index].pizzaCrust + ", " +pizzaOrders[index].pizzaToppings.length + " toppings pizza. Price: " + pizzaOrders[index].pizzaCost + "$</li>");
   }
 }
 
@@ -109,7 +109,8 @@ var deliveryInfo = [];
       event.preventDefault();
       $(".deliveryOrTakeout").hide();
       $(".finalPage").show();
-      $(".pizza-list").show();
+      $(".pizzasList").show();
+      listPizza(pizzaOrders);
       deliveryOption = "In-store Pick Up";
     })
     $("#finalize-delivery-btn").click(function(event) {
@@ -122,10 +123,11 @@ var deliveryInfo = [];
       var zipcode = $("input#zipcode").val();
       console.log("here");
       deliveryInfo = [firstName, lastName, address, city, state, zipcode];
+      listPizza(pizzaOrders);
       outputInfo(deliveryInfo);
       $(".deliveryMenu").hide();
       $(".finalPage").show();
-      $(".pizza-list").show();
+      $(".pizzasList").show();
       $(".deliveryFinal").show();
     })
   })
