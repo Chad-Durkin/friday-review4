@@ -20,5 +20,47 @@ body {
 
 #add-a-pizza {
   float: left;
+  margin-top: 10px;
   margin-right: 20px;
+}
+
+#complete-order {
+  margin-top: 10px;
+}
+
+#delivery-btn {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 50px;
+}
+
+#take-out-btn {
+  margin-top: 20px;
+  background-color: white;
+  color: #E30022
+}
+
+.buttonCss {
+  background-color: white;
+  color: #E30022
+}
+
+h2 {
+  font-weight: bolder;
+}
+
+.col-md-3 {
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+  height: 446.6px;
+}
+
+.spec {
+  border-right: 4px solid white;
+}
+
+.size {
+  border-left: 4px solid white;
 }

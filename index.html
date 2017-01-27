@@ -13,9 +13,9 @@
       <img id="logo" src="img/logo.png"/>
     </div>
     <div class="pizzaOrder">
-        <form id="pizza-input">
-          <div class="row">
-          <div class="col-md-3">
+      <form id="pizza-input">
+        <div class="row">
+          <div class="col-md-3 size">
             <h2>Size</h2>
             <div class="form-group">
               <select class="form-control" id="pizza-size">
@@ -99,7 +99,7 @@
               <input type="checkbox" name="top12" id="top12" value="jalapenos">
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 spec">
             <h2>Specials</h2>
             <div class="form-group">
               <label for="pineapple">Pineapple</label>
@@ -111,14 +111,14 @@
             </div>
           </div>
         </div>
-        <button type="submit" name="add-pizza-button" class="btn btn-primary" id="add-a-pizza">Add Pizza to Order</button>
-        </form>
-        <button type="click" name="complete-order" class=" btn btn-primary" id="complete-order">Complete Order</button>
+        <button type="submit" name="add-pizza-button" class="buttonCss" id="add-a-pizza">Add Pizza to Order</button>
+      </form>
+      <button type="click" name="complete-order" class=" buttonCss" id="complete-order">Complete Order</button>
     </div>
     <div class="deliveryOrTakeout">
       <h2>Delivery or in-store pick up?</h2>
-      <button type="click" name="button" class="btn btn-primary" id="delivery-btn">Delivery</button>
-      <button type="click" name="button" class="btn btn-primary" id="take-out-btn">In-store Pick Up</button>
+      <button type="click" name="button" class="buttonCss" id="delivery-btn">Delivery</button>
+      <button type="click" name="button" class="buttonCss" id="take-out-btn">In-store Pick Up</button>
     </div>
     <div class="deliveryMenu">
       <form id="delivery-address">
@@ -147,18 +147,18 @@
           <label for="zipcode">Zipcode</label>
           <input type="text" name="zipcode" id="zipcode">
         </div>
-        <button type="click" name="finishAddress" class="btn btn-primary" id="finalize-delivery-btn">Deliver!</button>
+        <button type="click" name="finishAddress" class="buttonCss" id="finalize-delivery-btn">Deliver!</button>
       </form>
     </div>
 
     <div class="finalPage">
       <h1>Thank you for placing your order at Pizza Planet!</h1>
-        <ol id="pizza-list">
-        </ol>
+      <ol id="pizza-list">
+      </ol>
       <div class="deliveryFinal">
         <h2>Delivery Info</h2>
-          <ul id="list-info">
-          </ul>
+        <ul id="list-info">
+        </ul>
       </div>
     </div>
   </div>
