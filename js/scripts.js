@@ -75,5 +75,6 @@ var pizzaOrders = [];
     console.log(newPizza);
     pizzaOrders.push(newPizza);
     console.log(pizzaOrders);
+    $('#pizza-input input').prop('checked', false);
     })
 });
