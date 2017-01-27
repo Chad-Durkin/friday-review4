@@ -1,3 +1,24 @@
 .deliveryOrTakeout, .deliveryMenu, .finalPage, .deliveryFinal{
   display:none;
 }
+
+.jumbotron {
+  background-color: 	#E30022;
+  margin-top: -100px;
+  margin-bottom: -80px;
+}
+
+#logo {
+  height: 250px;
+  width: 500px;
+}
+
+body {
+  background-color:	#E30022;
+  color: white;
+}
+
+#add-a-pizza {
+  float: left;
+  margin-right: 20px;
+}
