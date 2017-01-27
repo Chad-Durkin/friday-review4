@@ -6,9 +6,10 @@ function Pizza(pizzaSize, pizzaDough, pizzaCrust) {
   this.pizzaCost = 0;
 };
 
+
 Pizza.prototype = {
   cost: function() {
-  if(this.pizzaSize === "small") {
+  if(this.pizzaSize === "Small") {
     if(this.pizzaToppings.length <= 3) {
       this.pizzaCost += 8;
     } else if(this.pizzaToppings.length <= 5) {
@@ -16,7 +17,7 @@ Pizza.prototype = {
     } else if(this.pizzaToppings.length > 5 ) {
       this.pizzaCost += 16;
     }
-  } else if(this.pizzaSize === "medium") {
+  } else if(this.pizzaSize === "Medium") {
       if(this.pizzaToppings.length <= 3) {
         this.pizzaCost += 12.00;
       } else if(this.pizzaToppings.length <= 5) {
@@ -24,7 +25,7 @@ Pizza.prototype = {
       } else if(this.pizzaToppings.length >5 ) {
         this.pizzaCost += 20.00;
       }
-    } else if(this.pizzaSize === "large") {
+    } else if(this.pizzaSize === "Large") {
         if(this.pizzaToppings.length <= 3) {
           this.pizzaCost += 16.00;
         } else if(this.pizzaToppings.length <= 5) {
@@ -32,7 +33,7 @@ Pizza.prototype = {
         } else if(this.pizzaToppings.length >5 ) {
           this.pizzaCost += 24.00;
         }
-      } else if(this.pizzaSize === "extraLarge") {
+      } else if(this.pizzaSize === "ExtraLarge") {
           if(this.pizzaToppings.length <= 3) {
             this.pizzaCost += 20.00;
           } else if(this.pizzaToppings.length <= 5) {
@@ -52,7 +53,7 @@ Pizza.prototype = {
   }
 };
 
-function addToppings(){
+function addToppings() {
 var pizzaToppingsArray = [];
   for (var index = 0; index <= 14; index++) {
     if(typeof $("input:checkbox[name=top" + index + "]:checked").val() != "undefined") {
@@ -62,8 +63,24 @@ var pizzaToppingsArray = [];
   return pizzaToppingsArray;
 };
 
+function outputInfo(deliveryInfo) {
+  for (var index = 0; index < deliveryInfo.length; index++) {
+    $("#list-info").append("<li>" + deliveryInfo[index] + "</li>");
+  }
+}
+
+function listPizza(pizzaOrders) {
+  for (var index = 0; index < pizzaOrders.length; index++) {
+    $("#pizza-list").append("")
+  }
+}
+
+
 $(function() {
 var pizzaOrders = [];
+var deliveryOption;
+var deliveryInfo = [];
+
   $("#pizza-input").submit(function(event) {
     event.preventDefault();
     var pizzaSize = $("#pizza-size option:selected").val();
@@ -76,19 +93,41 @@ var pizzaOrders = [];
     pizzaOrders.push(newPizza);
     console.log(pizzaOrders);
     $('#pizza-input input').prop('checked', false);
+
+    $("#complete-order").click(function(event) {
+      event.preventDefault();
+      $(".pizzaOrder").hide();
+      $(".deliveryOrTakeout").show();
     })
-
-  $("#complete-order").click(function(event) {
-    $(".pizzaOrder").hide();
-    $(".deliveryOrTakeout").show();
+    $("#delivery-btn").click(function(event) {
+      event.preventDefault();
+      $(".deliveryOrTakeout").hide();
+      $(".deliveryMenu").show();
+      deliveryOption = "Delivery";
+    })
+    $("#take-out-btn").click(function(event) {
+      event.preventDefault();
+      $(".deliveryOrTakeout").hide();
+      $(".finalPage").show();
+      $(".pizza-list").show();
+      deliveryOption = "In-store Pick Up";
+    })
+    $("#finalize-delivery-btn").click(function(event) {
+      event.preventDefault();
+      var firstName = $("input#first-name").val();
+      var lastName = $("input#last-name").val();
+      var address = $("input#address").val();
+      var city = $("input#city").val();
+      var state = $("input#state").val();
+      var zipcode = $("input#zipcode").val();
+      console.log("here");
+      deliveryInfo = [firstName, lastName, address, city, state, zipcode];
+      outputInfo(deliveryInfo);
+      $(".deliveryMenu").hide();
+      $(".finalPage").show();
+      $(".pizza-list").show();
+      $(".deliveryFinal").show();
+    })
   })
-  $("#delivery-btn").click(function(event) {
-    $(".deliveryOrTakeout").hide();
-    $(".deliveryMenu").show();  
-  })
-  $("#take-out-btn").click(function(event) {
-    $(".deliveryOrTakeout").hide();
-  })
-
 
 });

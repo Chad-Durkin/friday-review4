@@ -19,10 +19,10 @@
             <h2>Size</h2>
             <div class="form-group">
               <select class="form-control" id="pizza-size">
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-                <option value="extraLarge">Extra Large</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="ExtraLarge">Extra Large</option>
               </select>
             </div>
             <h2>Dough</h2>
@@ -122,6 +122,7 @@
     </div>
     <div class="deliveryMenu">
       <form id="delivery-address">
+        <h2>Delivery Info:</h2>
         <div class="form-group">
           <label for="firstName">First Name</label>
           <input type="text" name="firstName" id="first-name">
@@ -143,11 +144,22 @@
           <input type="text" name="state" id="state">
         </div>
         <div class="form-group">
-          <label for="zipCode">zipCode</label>
-          <input type="text" name="zipCode" id="zipCode">
+          <label for="zipcode">Zipcode</label>
+          <input type="text" name="zipcode" id="zipcode">
         </div>
+        <button type="click" name="finishAddress" class="btn btn-primary" id="finalize-delivery-btn">Deliver!</button>
       </form>
+    </div>
 
+    <div class="finalPage">
+      <h1>Thank you for placing your order at Pizza Planet!</h1>
+      <div class="pizzaOrder">
+        <ol id="pizza-list"></ol>
+      </div>
+      <div class="deliveryFinal">
+        <h2>Delivery Info</h2>
+          <ul id="list-info"></ul>
+      </div>
     </div>
   </div>
 </body>
