@@ -1,101 +1,118 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <script src="js/scripts.js"></script>
-    <script src="js/jquery-3.1.1.js"></script>
-    <title>Chad's Pizza Parlor</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-          <h1>Chad's Pizza Parlor</h1>
-      </div>
-      <div class="pizzaToppings">
+<head>
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <script src="js/jquery-3.1.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Pizza Planet</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Pizza Planet</h1>
+    </div>
+    <div class="pizzaOrder">
         <form id="pizza-input">
-          <div class="dough">
-          <h2>Dough</h2>
-          <div class="form-group">
-            <label for="weat">Wheat</label>
-            <input type="checkbox" name="weat" value="weat">
+          <div class="row">
+          <div class="col-md-3">
+            <h2>Size</h2>
+            <div class="form-group">
+              <select class="form-control" name="pizzaSize">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="extraLarge">Extra Large</option>
+              </select>
+            </div>
+            <h2>Dough</h2>
+            <div class="form-group">
+              <select class="form-control" name="pizzaDough">
+                <option value="small">White</option>
+                <option value="medium">Wheat</option>
+              </select>
+            </div>
+            <h2>Crust Options</h2>
+            <div class="form-group">
+              <select class="form-control" name="pizzaCrust">
+                <option value="regular">Regular</option>
+                <option value="extraThick">Extra Thick</option>
+                <option value="thin">Thin</option>
+              </select>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="white">White</label>
-            <input type="checkbox" name="white" value="white">
+          <div class="col-md-3">
+            <h2>Meats</h2>
+            <div class="form-group">
+              <label for="pepperoni">Pepperoni</label>
+              <input type="checkbox" name="pepperoni" value="pepperoni">
+            </div>
+            <div class="form-group">
+              <label for="italianHam">Italian Ham</label>
+              <input type="checkbox" name="italianHam" value="italianHam">
+            </div>
+            <div class="form-group">
+              <label for="chicken">Chicken</label>
+              <input type="checkbox" name="chicken" value="chicken">
+            </div>
+            <div class="form-group">
+              <label for="chorizo">Chorizo</label>
+              <input type="checkbox" name="chorizo" value="chorizo">
+            </div>
           </div>
+          <div class="col-md-3">
+            <h2>Veggies</h2>
+            <div class="form-group">
+              <label for="mushrooms">Mushrooms</label>
+              <input type="checkbox" name="mushrooms" value="mushrooms">
+            </div>
+            <div class="form-group">
+              <label for="olives">Olives</label>
+              <input type="checkbox" name="olives" value="olives">
+            </div>
+            <div class="form-group">
+              <label for="spinach">Spinach</label>
+              <input type="checkbox" name="spinach" value="spinach">
+            </div>
+            <div class="form-group">
+              <label for="romaTomatoes">Roma Tomatoes</label>
+              <input type="checkbox" name="romaTomatoes" value="romaTomatoes">
+            </div>
+            <div class="form-group">
+              <label for="sunDriedTomatoes">Sun Dried Tomatoes</label>
+              <input type="checkbox" name="sunDriedTomatoes" value="sunDriedTomatoes">
+            </div>
+            <div class="form-group">
+              <label for="redOnion">Red Onion</label>
+              <input type="checkbox" name="redOnion" value="redOnion">
+            </div>
+            <div class="form-group">
+              <label for="garlic">Garlic</label>
+              <input type="checkbox" name="garlic" value="garlic">
+            </div>
+            <div class="form-group">
+              <label for="greenPeppers">Green Peppers</label>
+              <input type="checkbox" name="greenPeppers" value="greenPeppers">
+            </div>
+            <div class="form-group">
+              <label for="jalapenos">Jalapenos</label>
+              <input type="checkbox" name="jalapenos" value="jalapenos">
+            </div>
           </div>
-          <div class="meats">
-          <h2>Meats</h2>
-          <div class="form-group">
-            <label for="pepperoni">Pepperoni</label>
-            <input type="checkbox" name="pepperoni" value="pepperoni">
-          </div>
-          <div class="form-group">
-            <label for="italianHam">Italian Ham</label>
-            <input type="checkbox" name="italianHam" value="italianHam">
-          </div>
-          <div class="form-group">
-            <label for="chicken">Chicken</label>
-            <input type="checkbox" name="chicken" value="chicken">
-          </div>
-          <div class="form-group">
-            <label for="chorizo">Chorizo</label>
-            <input type="checkbox" name="chorizo" value="chorizo">
-          </div>
-          </div>
-          <div class="veggies">
-          <h2>Veggies</h2>
-          <div class="form-group">
-            <label for="mushrooms">Mushrooms</label>
-            <input type="checkbox" name="mushrooms" value="mushrooms">
-          </div>
-          <div class="form-group">
-            <label for="olives">Olives</label>
-            <input type="checkbox" name="olives" value="olives">
-          </div>
-          <div class="form-group">
-            <label for="spinach">Spinach</label>
-            <input type="checkbox" name="spinach" value="spinach">
-          </div>
-          <div class="form-group">
-            <label for="romaTomatoes">Roma Tomatoes</label>
-            <input type="checkbox" name="romaTomatoes" value="romaTomatoes">
-          </div>
-          <div class="form-group">
-            <label for="sunDriedTomatoes">Sun Dried Tomatoes</label>
-            <input type="checkbox" name="sunDriedTomatoes" value="sunDriedTomatoes">
-          </div>
-          <div class="form-group">
-            <label for="redOnion">Red Onion</label>
-            <input type="checkbox" name="redOnion" value="redOnion">
-          </div>
-          <div class="form-group">
-            <label for="garlic">Garlic</label>
-            <input type="checkbox" name="garlic" value="garlic">
-          </div>
-          <div class="form-group">
-            <label for="greenPeppers">Green Peppers</label>
-            <input type="checkbox" name="greenPeppers" value="greenPeppers">
-          </div>
-          <div class="form-group">
-            <label for="jalapenos">Jalapenos</label>
-            <input type="checkbox" name="jalapenos" value="jalapenos">
-          </div>
-          </div>
-          <div class="specials">
-          <h2>Specials</h2>
-          <div class="form-group">
-            <label for="pineapple">Pineapple</label>
-            <input type="checkbox" name="pineapple" value="pineapple">
-          </div>
-          <div class="form-group">
-            <label for="bacon">Bacon</label>
-            <input type="checkbox" name="bacon" value="bacon">
+          <div class="col-md-3">
+            <h2>Specials</h2>
+            <div class="form-group">
+              <label for="pineapple">Pineapple</label>
+              <input type="checkbox" name="pineapple" value="pineapple">
+            </div>
+            <div class="form-group">
+              <label for="bacon">Bacon</label>
+              <input type="checkbox" name="bacon" value="bacon">
+            </div>
           </div>
         </div>
         </form>
-      </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
