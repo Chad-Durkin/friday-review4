@@ -20,13 +20,9 @@ $(function() {
 var pizzaToppingsArray = [];
   $("#pizza-input").submit(function(event) {
     event.preventDefault();
-    var pizzaSize = $("input#pizza-size").val();
-    var pizzaDough = $("input#pizza-dough").val();
-    var pizzaCrust = $("input#pizza-crust").val();
-    console.log(pizzaSize);
-    console.log(pizzaDough);
-    console.log(pizzaCrust);
+    var pizzaSize = $("#pizza-size option:selected").val();
+    var pizzaDough = $("#pizza-dough option:selected").val();
+    var pizzaCrust = $("#pizza-crust option:selected").val();
     pizzaToppingsArray = addToppings(pizzaToppingsArray);
-    console.log(pizzaToppingsArray);
-  })
+    })
 });
