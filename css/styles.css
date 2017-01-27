@@ -34,6 +34,9 @@ body {
   margin-left: 50px;
 }
 
+#delivery-address input {
+  color: #E30022
+}
 #take-out-btn {
   margin-top: 20px;
   background-color: white;
@@ -42,7 +45,7 @@ body {
 
 .buttonCss {
   background-color: white;
-  color: #E30022
+  color: #E30022;
 }
 
 h2 {
@@ -63,4 +66,14 @@ h2 {
 
 .size {
   border-left: 4px solid white;
+}
+
+#pizza-count {
+  margin-right: 30px;
+  float: right;
+}
+
+#pizza-count-output {
+  float: right;
+  margin-left: 20px;
 }

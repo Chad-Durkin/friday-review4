@@ -71,27 +71,31 @@ function outputInfo(deliveryInfo) {
 
 function listPizza(pizzaOrders) {
   for (var index = 0; index < pizzaOrders.length; index++) {
-    $("#pizza-list").append("<li>" + pizzaOrders[index].pizzaSize + ", " + pizzaOrders[index].pizzaDough + ", " + pizzaOrders[index].pizzaCrust + ", " +pizzaOrders[index].pizzaToppings.length + " toppings pizza. Price: " + pizzaOrders[index].pizzaCost + "$</li>");
+    $("#pizza-list").append("<li>" + pizzaOrders[index].pizzaSize + ", " + pizzaOrders[index].pizzaDough + ", " + pizzaOrders[index].pizzaCrust + ", " + pizzaOrders[index].pizzaToppings.length + " toppings pizza. Price: " + pizzaOrders[index].pizzaCost + "$</li>");
   }
 }
 
+function pizzaCountShow(pizzaCounter) {
+  $("#pizza-count-output").text(pizzaCounter);
+}
 
 $(function() {
   var pizzaOrders = [];
   var deliveryOption;
   var deliveryInfo = [];
+  var pizzaCounter = 0;
 
   $("#pizza-input").submit(function(event) {
     event.preventDefault();
+    pizzaCounter++;
+    pizzaCountShow(pizzaCounter);
     var pizzaSize = $("#pizza-size option:selected").val();
     var pizzaDough = $("#pizza-dough option:selected").val();
     var pizzaCrust = $("#pizza-crust option:selected").val();
     var newPizza = new Pizza(pizzaSize, pizzaDough, pizzaCrust);
     newPizza.pizzaToppings = addToppings();
     newPizza.cost();
-    console.log(newPizza);
     pizzaOrders.push(newPizza);
-    console.log(pizzaOrders);
     $('#pizza-input input').prop('checked', false);
 
     $("#complete-order").click(function(event) {
@@ -99,37 +103,35 @@ $(function() {
       $(".pizzaOrder").hide();
       $(".deliveryOrTakeout").show();
     })
-    $("#delivery-btn").click(function(event) {
-      event.preventDefault();
-      $(".deliveryOrTakeout").hide();
-      $(".deliveryMenu").show();
-      deliveryOption = "Delivery";
-    })
-    $("#take-out-btn").click(function(event) {
-      event.preventDefault();
-      $(".deliveryOrTakeout").hide();
-      $(".finalPage").show();
-      $(".pizzasList").show();
-      listPizza(pizzaOrders);
-      deliveryOption = "In-store Pick Up";
-    })
-    $("#finalize-delivery-btn").click(function(event) {
-      event.preventDefault();
-      var firstName = $("input#first-name").val();
-      var lastName = $("input#last-name").val();
-      var address = $("input#address").val();
-      var city = $("input#city").val();
-      var state = $("input#state").val();
-      var zipcode = $("input#zipcode").val();
-      console.log("here");
-      deliveryInfo = [firstName, lastName, address, city, state, zipcode];
-      listPizza(pizzaOrders);
-      outputInfo(deliveryInfo);
-      $(".deliveryMenu").hide();
-      $(".finalPage").show();
-      $(".pizzasList").show();
-      $(".deliveryFinal").show();
-    })
   })
-
+  $("#delivery-btn").click(function(event) {
+    event.preventDefault();
+    $(".deliveryOrTakeout").hide();
+    $(".deliveryMenu").show();
+    deliveryOption = "Delivery";
+    listPizza(pizzaOrders);
+  })
+  $("#take-out-btn").click(function(event) {
+    event.preventDefault();
+    $(".deliveryOrTakeout").hide();
+    $(".finalPage").show();
+    $(".pizzasList").show();
+    deliveryOption = "In-store Pick Up";
+    listPizza(pizzaOrders);
+  })
+  $("#finalize-delivery-btn").click(function(event) {
+    event.preventDefault();
+    var firstName = $("input#first-name").val();
+    var lastName = $("input#last-name").val();
+    var address = $("input#address").val();
+    var city = $("input#city").val();
+    var state = $("input#state").val();
+    var zipcode = $("input#zipcode").val();
+    deliveryInfo = [firstName, lastName, address, city, state, zipcode];
+    outputInfo(deliveryInfo);
+    $(".deliveryMenu").hide();
+    $(".finalPage").show();
+    $(".pizzasList").show();
+    $(".deliveryFinal").show();
+  })
 });
