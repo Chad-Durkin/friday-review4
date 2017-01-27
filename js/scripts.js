@@ -77,4 +77,18 @@ var pizzaOrders = [];
     console.log(pizzaOrders);
     $('#pizza-input input').prop('checked', false);
     })
+
+  $("#complete-order").click(function(event) {
+    $(".pizzaOrder").hide();
+    $(".deliveryOrTakeout").show();
+  })
+  $("#delivery-btn").click(function(event) {
+    $(".deliveryOrTakeout").hide();
+    $(".deliveryMenu").show();  
+  })
+  $("#take-out-btn").click(function(event) {
+    $(".deliveryOrTakeout").hide();
+  })
+
+
 });

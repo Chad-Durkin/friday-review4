@@ -1,1 +1,3 @@
-
+.deliveryOrTakeout, .deliveryMenu{
+  display:none;
+}
