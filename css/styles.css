@@ -35,7 +35,7 @@ body {
 }
 
 #delivery-address input {
-  color: #E30022
+  color: #E30022;
 }
 #take-out-btn {
   margin-top: 20px;
@@ -83,6 +83,8 @@ h2 {
   border: 2px white solid;
   width: 40%;
   float: left;
+  background-color: white;
+  color: #E30022;
 }
 .deliveryMenu h2 {
   margin-left: 90px;
@@ -106,5 +108,19 @@ h2 {
 }
 
 .imagetwo {
-  opacity: 0.5;
+  background-color: white;
+  height: 350.8px;
+  text-align: center;
+  margin-right: 250px;
+  padding-top: 80px;
+  padding-right: 40px;
+}
+
+.finalPage h1 {
+  font-weight: bolder;
+}
+
+.finalPage li {
+  font-weight: bold;
+  font-size: 20px;
 }

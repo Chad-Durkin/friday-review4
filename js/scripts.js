@@ -64,9 +64,13 @@ function addToppings() {
 };
 
 function outputInfo(deliveryInfo) {
-  for (var index = 0; index < deliveryInfo.length; index++) {
-    $("#list-info").append("<li>" + deliveryInfo[index] + "</li>");
-  }
+  if(deliveryInfo[0] != "") {
+    for (var index = 0; index < deliveryInfo.length; index++) {
+      $("#list-info").append("<li>" + deliveryInfo[index] + "</li>");
+    }
+  } else  {
+      $("#list-info").append("<li>You didn't enter any delivery info, so come to the store and we'll have your pizza ready!</li>")
+    }
 }
 
 function listPizza(pizzaOrders) {
@@ -127,7 +131,7 @@ $(function() {
     var city = $("input#city").val();
     var state = $("input#state").val();
     var zipcode = $("input#zipcode").val();
-    deliveryInfo = [firstName, lastName, address, city, state, zipcode];
+    deliveryInfo = [firstName, lastName, address, city + ", " + state + " " + zipcode];
     outputInfo(deliveryInfo);
     $(".deliveryMenu").hide();
     $(".finalPage").show();
