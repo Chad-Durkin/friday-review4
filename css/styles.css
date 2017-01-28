@@ -77,3 +77,34 @@ h2 {
   float: right;
   margin-left: 20px;
 }
+
+#delivery-address {
+  text-align: center;
+  border: 2px white solid;
+  width: 40%;
+  float: left;
+}
+.deliveryMenu h2 {
+  margin-left: 90px;
+}
+
+#address {
+  margin-right: 29px;
+}
+
+
+.city {
+  margin-left: 42px;
+}
+
+.state {
+  margin-left: 37px;
+}
+
+.zipcode{
+  margin-left: 20px;
+}
+
+.imagetwo {
+  opacity: 0.5;
+}
